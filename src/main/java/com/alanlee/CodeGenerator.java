@@ -1,5 +1,6 @@
 package com.alanlee;
 
+import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
@@ -51,10 +52,11 @@ public class CodeGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/s_sa_web?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=CTT&pinGlobalTxToPhysicalConnection=true");
+        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/im_web?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=CTT&pinGlobalTxToPhysicalConnection=true");
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("root");
+        dsc.setDbType(DbType.MYSQL);
         mpg.setDataSource(dsc);
 
         // 包配置
