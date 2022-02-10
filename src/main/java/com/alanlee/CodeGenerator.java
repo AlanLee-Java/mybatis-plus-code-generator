@@ -51,7 +51,7 @@ public class CodeGenerator {
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
         gc.setOutputDir(projectPath + "/src/main/java");
-        gc.setAuthor("OLYM");
+        gc.setAuthor("AlanLee");
         gc.setOpen(false);
         gc.setServiceName("%sService");    //去掉Service接口的首字母I
         gc.setIdType(IdType.INPUT);
@@ -59,17 +59,17 @@ public class CodeGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/sdsp-sdms?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=CTT&pinGlobalTxToPhysicalConnection=true");
+        dsc.setUrl("jdbc:mysql://192.168.138.73:3306/data_assets?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT%2B8");
         dsc.setDriverName("com.mysql.jdbc.Driver");
-        dsc.setUsername("root");
-        dsc.setPassword("root");
+        dsc.setUsername("appOpr");
+        dsc.setPassword("q7SREqPxTTDZ6ZZz");
         dsc.setDbType(DbType.MYSQL);
         mpg.setDataSource(dsc);
 
         // 包配置
         PackageConfig pc = new PackageConfig();
         //pc.setModuleName(scanner("模块名"));
-        pc.setParent("com.olym");
+        pc.setParent("com.olym.sdms.meta.scan.service.modules");
         mpg.setPackageInfo(pc);
 
         // 自定义配置
