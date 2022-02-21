@@ -9,11 +9,13 @@ package com.alanlee;
 public class CalculationTableSuffix {
 
     public static void main(String[] args) {
-        String databaseId = "61f102dcae9b012e346f064e";
+        String databaseId = "620cc173c37c59555cfed817";
         // 获取hashCode绝对值
         int hashCode = Math.abs(databaseId.hashCode());
         String index = String.valueOf(hashCode % 128);
         System.out.println(index);
+        // 计算采样间隔
+        System.out.println(20 % 10);
     }
 
 }
