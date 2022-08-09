@@ -54,22 +54,22 @@ public class CodeGenerator {
         gc.setAuthor("AlanLee");
         gc.setOpen(false);
         gc.setServiceName("%sService");    //去掉Service接口的首字母I
-        gc.setIdType(IdType.INPUT);
+        gc.setIdType(IdType.AUTO);
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://192.168.138.73:3306/data_assets?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT%2B8");
+        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/bar_ticket?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT%2B8");
         dsc.setDriverName("com.mysql.jdbc.Driver");
-        dsc.setUsername("appOpr");
-        dsc.setPassword("q7SREqPxTTDZ6ZZz");
+        dsc.setUsername("root");
+        dsc.setPassword("root");
         dsc.setDbType(DbType.MYSQL);
         mpg.setDataSource(dsc);
 
         // 包配置
         PackageConfig pc = new PackageConfig();
         //pc.setModuleName(scanner("模块名"));
-        pc.setParent("com.olym.sdms.meta.scan.service.modules");
+        pc.setParent("com.bar.applet");
         mpg.setPackageInfo(pc);
 
         // 自定义配置
@@ -151,7 +151,7 @@ public class CodeGenerator {
         // 驼峰转连字符
         //strategy.setControllerMappingHyphenStyle(true);
         // 表前缀
-        strategy.setTablePrefix("t_");
+        //strategy.setTablePrefix("t_");
         mpg.setStrategy(strategy);
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
         mpg.execute();
